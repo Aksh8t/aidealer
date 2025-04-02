@@ -1,18 +1,30 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-
-    async headers(){
-        return [
-            {
-                source: "/embed",
-                headers: [
-                    {
-                        key: "Content-Security-Policy",
-                        value: "frame-src 'self https://wamai.created.app;",
-                    }
-                ]
-            }
-        ];
+    experimental: {
+      serverComponentsHmrCache: false, // defaults to true
     },
-};
-export default nextConfig;
+    images: {
+      remotePatterns: [
+        {
+          protocol: "https",
+          hostname: "ymqpkygmownybanldbpq.supabase.co",
+        },
+      ],
+    },
+  
+    async headers() {
+      return [
+        {
+          source: "/embed",
+          headers: [
+            {
+              key: "Content-Security-Policy",
+              value: "frame-src 'self' https://roadsidecoder.created.app;",
+            },
+          ],
+        },
+      ];
+    },
+  };
+  
+  export default nextConfig;
