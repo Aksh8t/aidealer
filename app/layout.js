@@ -2,7 +2,6 @@ import { Inter } from "next/font/google";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header"; // Adjust the path as needed
-
 import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({
@@ -26,9 +25,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className}`}>
-        <ClerkProvider>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={`${inter.className}`}>
           <Header />
           <main className="min-h-screen flex flex-col justify-between bg-gray-50 dark:bg-gray-900">
             {children}
@@ -36,9 +35,8 @@ export default function RootLayout({ children }) {
           <footer className="bg-gray-800 text-white py-4 text-center">
             <p>!?!?!??!?!?! FUCKOFF MATE !?!?!?!??!??</p>
           </footer>
-        </ClerkProvider>
-      </body>
-    </html>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
-

@@ -8,6 +8,8 @@ const isProtectedRoute = createRouteMatcher([
   "/reservations(.*)",
 ]);
 
+const isPublicRoute = createRouteMatcher(["/sign-in(.*)"]);
+
 // Create Arcjet middleware
 const aj = arcjet({
   key: process.env.ARCJET_KEY,
@@ -35,7 +37,6 @@ const clerk = clerkMiddleware(async (auth, req) => {
     const { redirectToSignIn } = await auth();
     return redirectToSignIn();
   }
-
   return NextResponse.next();
 });
 
