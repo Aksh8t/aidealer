@@ -116,7 +116,7 @@
 
 @layer utilities {
   .gradient {
-    @apply bg-gradient-to-br from-blue-500 to-green-500;
+    @apply bg-gradient-to-br from-blue-400 to-green-500;
   }
   .gradient-title {
     @apply gradient font-extrabold tracking-tighter pr-2 pb-2 text-transparent bg-clip-text;
@@ -124,7 +124,7 @@
 }
 
 .dotted-background {
-  background-color: #16223c;
+  background-color: #0c0c0c;
   background-image: radial-gradient(
     rgba(255, 255, 255, 0.28) 1px,
     transparent 1px

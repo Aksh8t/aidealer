@@ -26,9 +26,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body className={`${inter.className}`}>
+    <html lang="en">
+      <body className={`${inter.className}`}>
+        <ClerkProvider>
           <Header />
           <main className="min-h-screen flex flex-col justify-between bg-gray-50 dark:bg-gray-900">
             {children}
@@ -36,8 +36,9 @@ export default function RootLayout({ children }) {
           <footer className="bg-gray-800 text-white py-4 text-center">
             <p>!?!?!??!?!?! FUCKOFF MATE !?!?!?!??!??</p>
           </footer>
-        </body>
-      </html>
-    </ClerkProvider>
+        </ClerkProvider>
+      </body>
+    </html>
   );
 }
+
